@@ -1,16 +1,20 @@
-# vote-app
+# FastPoll-app
 
-This template should help get you started developing with Vue 3 in Vite.
+##
 
-## Recommended IDE Setup
+made with vuejs vite tailwindcss firebase
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 🛠 Tools
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Vuejs, tailwindcss, Firebase
 
 ## Project Setup
+
+Clone the project
+
+```sh
+  git clone https://github.com/hamisirizwan/fastPoll.git
+```
 
 ```sh
 npm install
@@ -27,3 +31,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## 🚀 About Me
+
+I'm a full stack developer building cool stuffs with nodejs reactjs vuejs firebase mysql.....
