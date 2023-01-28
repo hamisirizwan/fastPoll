@@ -1,8 +1,6 @@
 # FastPoll-app
 
-##
-
-made with vuejs vite tailwindcss firebase
+An online polling/voting solution
 
 ## 🛠 Tools
 
