@@ -79,7 +79,10 @@ import TwitterIconVue from "../assets/icons/TwitterIcon.vue";
               cursor-pointer
             "
           >
-            <GoogleIconVue />
+            <FontAwesomeIcon
+              :icon="['fab', 'google']"
+              class="w-6 text-primary"
+            />
             <p>Google</p>
           </div>
           <div
@@ -94,7 +97,10 @@ import TwitterIconVue from "../assets/icons/TwitterIcon.vue";
               cursor-pointer
             "
           >
-            <GithubIconVue />
+            <FontAwesomeIcon
+              :icon="['fab', 'github']"
+              class="w-6 text-primary"
+            />
             <p>Github</p>
           </div>
           <div
@@ -109,7 +115,10 @@ import TwitterIconVue from "../assets/icons/TwitterIcon.vue";
               cursor-pointer
             "
           >
-            <TwitterIconVue />
+            <FontAwesomeIcon
+              :icon="['fab', 'twitter']"
+              class="w-6 text-primary"
+            />
             <p>Twitter</p>
           </div>
           <!-- <div>Google</div> -->

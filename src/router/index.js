@@ -5,6 +5,7 @@ import LoginPage from "../views/LoginPage.vue";
 import PublicPolls from "../views/PublicPolls.vue";
 import RegisterPage from "../views/RegisterPage.vue";
 import ProtectedRoute from "../views/ProtectedRoute.vue";
+import { auth } from "../firebase";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,13 +30,28 @@ const router = createRouter({
       name: "publicPolls",
       component: () => PublicPolls,
     },
-    // {component: ()=> ProtectedRoute}
-    // {
-    //   path: "/public-polls",
-    //   name: "publicPolls",
-    //   component: () => PublicPolls,
-    // },
+    {
+      path: "/create-poll",
+      name: "createpoll",
+      component: () => CreatePoll,
+      meta: {
+        isAuthRequired: true,
+      },
+    },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  const isAutheticated = auth.currentUser;
+  const isAuthRequired = to.matched.some(
+    (record) => record.meta.isAuthRequired
+  );
+  if (isAuthRequired && !isAutheticated) {
+    // alert("hello");
+    next("/login");
+  } else {
+    next();
+  }
 });
 
 export default router;

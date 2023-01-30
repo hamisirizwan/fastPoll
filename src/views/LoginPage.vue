@@ -1,8 +1,17 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import GithubIconVue from "../assets/icons/GithubIcon.vue";
-import GoogleIconVue from "../assets/icons/GoogleIcon.vue";
-import TwitterIconVue from "../assets/icons/TwitterIcon.vue";
+import { auth } from "../firebase";
+import { ref } from "vue";
+
+const details = ref({
+  email: "",
+  password: "",
+});
+
+const handleSubmit = () => {
+  // alert("submitted");
+  console.log(details);
+};
 </script>
 <template>
   <section class="mx-auto max-w-lg my-16 p-3">
@@ -16,6 +25,7 @@ import TwitterIconVue from "../assets/icons/TwitterIcon.vue";
       </h1>
     </div>
     <form
+      @submit.prevent="handleSubmit"
       class="
         mx-auto
         max-w-sm
@@ -30,6 +40,7 @@ import TwitterIconVue from "../assets/icons/TwitterIcon.vue";
       <div class="space-y-2">
         <label class="block">Email</label>
         <input
+          v-model="details.email"
           type="email"
           class="
             w-full
@@ -44,6 +55,7 @@ import TwitterIconVue from "../assets/icons/TwitterIcon.vue";
       <div class="space-y-2">
         <label class="block">Password</label>
         <input
+          v-model="details.password"
           type="password"
           class="
             w-full
@@ -77,7 +89,10 @@ import TwitterIconVue from "../assets/icons/TwitterIcon.vue";
               cursor-pointer
             "
           >
-            <GoogleIconVue />
+            <FontAwesomeIcon
+              :icon="['fab', 'google']"
+              class="w-6 text-primary"
+            />
             <p>Google</p>
           </div>
           <div
@@ -92,7 +107,10 @@ import TwitterIconVue from "../assets/icons/TwitterIcon.vue";
               cursor-pointer
             "
           >
-            <GithubIconVue />
+            <FontAwesomeIcon
+              :icon="['fab', 'github']"
+              class="w-6 text-primary"
+            />
             <p>Github</p>
           </div>
           <div
@@ -107,7 +125,10 @@ import TwitterIconVue from "../assets/icons/TwitterIcon.vue";
               cursor-pointer
             "
           >
-            <TwitterIconVue />
+            <FontAwesomeIcon
+              :icon="['fab', 'twitter']"
+              class="w-6 text-primary"
+            />
             <p>Twitter</p>
           </div>
           <!-- <div>Google</div> -->
